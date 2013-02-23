@@ -5,11 +5,10 @@ function Level() {
 
     this.init = function(initFunc) {
         this.initFunc = initFunc;
-        //Zoiets?
-        this.doInit();
     }
 	/**
 	 * Moet this.doInit niet this.Init aanroepen? of is t juist andersom?
+	 *
 	 */
     this.doInit = function() {
         this.initFunc();
@@ -44,6 +43,7 @@ function Level() {
                 return true;
             }
         }
+
         return false;
     }
 }
