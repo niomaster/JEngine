@@ -1,26 +1,35 @@
 function Level() {
 	this.objects = [];
+	this.game = null;
+	this.initFunc = function (){};
 
 	this.init = function(initFunc) {
-		initFunc();
+		for(var i = 0; i < this.objects.length; i += 1) {
+			this.objects[i].doInit();
+		}
+	}
 
-		for()
+	this.doInit = function(initFunc) {
+		this.initFunc = initFunc;
+		this.init();
 	}
 
 	this.render = function(g) {
 		for(var i = 0; i < this.objects.length; i += 1) {
-			this.objects[i].render(g);
+			this.objects[i].doRender(g);
 		}
 	}
 
 	this.tick = function(time) {
 		for(var i = 0; i < this.objects.length; i += 1) {
-			this.objects[i].tick(time);
+			this.objects[i].doTick(time);
 		}
 	}
 
 	this.addObject = function(object) {
+		object.level = this;
 		this.objects.push(object);
+		return this;
 	}
 
 	this.deleteObject = function(object) {
