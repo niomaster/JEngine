@@ -6156,3 +6156,7 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+input.android{
+  border-left:1px solid gray;
+}
