@@ -70,5 +70,5 @@ function Game() {
     
     this.render = function() {
         this.currentLevel.render(this.g);
-    }
+    }   
 }

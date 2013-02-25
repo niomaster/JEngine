@@ -4,6 +4,8 @@ function Object() {
     this.w = 32;
     this.h = 32;
     this.level = null;
+    this.isStatic = false;
+    
     this.initFunc = function(){};
     this.tickFunc = function(){};
     this.renderFunc = function(){};
@@ -33,5 +35,22 @@ function Object() {
     
     this.doRender = function(g) {
         this.renderFunc(g);
+    }
+    
+    //Movement functions, toepassen of niet?
+    this.moveLeft(speed) {
+    	this.x -= speed;
+    }
+    
+    this.moveRight(speed) {
+    	this.x += speed;
+    }
+    
+    this.moveUp(speed) {
+    	this.y -= speed;
+    }
+    
+    this.moveDown(speed) {
+    	this.y += speed;
     }
 }
